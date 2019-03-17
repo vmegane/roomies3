@@ -1,0 +1,183 @@
+.homes-content-wrapper {
+    @media screen and (min-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    padding: 14px;
+    width: 100%;
+    height: auto;
+
+
+    .button-join-home {
+         @media screen and (max-width: 350px) {
+            height: 30px;
+            width: 150px;
+            padding: 0px;
+        }
+        padding: 10px;
+        background-color: $secondButtonColor;
+        color: white;
+        font-family: "Raleway", sans-serif;
+        font-size: 1em;
+        transition: all .2s ease-in-out;
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+        border: 0;
+    }
+
+
+    h1 {
+        margin: 20px 0 20px 0;
+    }
+}
+
+.create-home-wrapper {
+    // display: flex;
+    // flex-direction: column;
+    // align-content: center;
+    // align-items: center;
+    padding: 10px;
+    p {
+        text-align: center;
+    }
+    .create-home-form {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        width: 80%;
+        .create-home-button {
+            // padding: 10px;
+            margin: 17px 0 17px 0;
+            background-color: $buttonColor;
+            color: white;
+            font-family: "Raleway", sans-serif;
+            font-size: 1em;
+            transition: all .2s ease-in-out;
+            border-radius: 5px;
+            border: 1px solid lightslategrey;
+        }
+        input {
+            padding: 10px 10px 10px 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid lightslategrey;
+            background-color: white;
+            font-family: 'Raleway', sans-serif;
+            color: $textColor;
+            &::placeholder {
+                color: $textColor;
+                text-align: center;
+                font-family: 'Raleway', sans-serif;
+            }
+            &:focus {
+                font-size: 18px;
+                border: 1px solid $textColor;
+                &::placeholder {
+                    color: $textColor;
+                    text-align: center;
+                    font-family: 'Raleway', sans-serif;
+                    
+                }
+            }
+        }
+    }
+}
+.homes-list {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+        li {
+        margin: 5px;
+    }
+    @media screen and (min-width: 720px) {
+        li {
+            width: 46%;
+            //overflow: hidden;
+            margin: 5px;
+        }
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;   }
+    
+        .single-home-wrapper {
+        margin: 0;        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #c7ecf1;
+        padding: 13px 15px 13px 15px;
+        border-radius: 5px;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(129, 129, 129,1);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(129, 129, 129,1);
+        box-shadow: 1px 1px 2px 0px rgba(129, 129, 129, 1);
+        //min-width: 300px;
+        // @media screen and (max-width: 350px) {
+        //     align-items: center;
+        //     flex-wrap: wrap;
+        //     justify-content: center;
+        // }
+        @media screen and (min-width: 720px) {
+           
+            // align-items: center;
+            // flex-wrap: wrap;
+            // justify-content: center;
+            width: 94%;            
+            justify-content: center;
+            -webkit-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
+            -moz-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
+            box-shadow: 1px 1px 2px 0px rgba(115, 115, 115, 1);
+
+            //min-width: 200px;
+        }
+
+}
+
+
+    // @media screen and (max-width: 720px) {
+       
+    // }
+    .single-home-wrapper-inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;       
+        align-items: center;
+        width: auto;
+        margin: 0 10px 0 0;
+        @media screen and (min-width: 720px) {
+            width: 100%;
+        }
+        span.home-name {
+        margin: 5px;
+        padding: 3px 0 3px 0;
+        text-transform: capitalize;
+        font-weight: bold;
+        font-size: 1.3em;
+        text-align: center;
+        letter-spacing: 1px;
+         a {
+             &:hover {
+                 color: $buttonColor;
+             }
+         }
+        }
+
+        span.roommates-number {
+            align-self: center;
+        }
+    }
+
+    span {
+        margin-left: 10px;
+    }
+}

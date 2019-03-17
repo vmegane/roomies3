@@ -1,0 +1,103 @@
+.login-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    max-width: 600px;
+    height: 70%;
+}
+
+
+.input-submit-logout {
+    padding: 10px;
+    @media screen and (max-width: 720px) {
+        margin-bottom: 28px;
+        background-color: $buttonColor;
+
+    }
+    border: 0;
+    border-radius: 25px;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: .7em;
+    background-color: $logoutButtonColor;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+}
+
+.login-page-form-wrapper {
+    height: 100%;
+    width: 100%;
+    // padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $containerBgColor;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
+    box-shadow: 1px 1px 2px 0px rgba(115, 115, 115, 1);
+}
+
+.login-form-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+  
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    @media screen and (max-height: 360px) {
+    padding: 2px;    }
+    input {
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid lightslategrey;
+        background-color: white;
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        font-size: 0.9em;
+        &::placeholder {
+            color: $textColor;
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+        }
+        &:focus {
+            font-size: 18px;
+            border: 1px solid $textColor;
+            &::placeholder {
+                color: $textColor;
+                text-align: center;
+                font-family: 'Raleway', sans-serif;
+                
+            }
+        }
+        &.input-submit-login {
+            padding: 10px;
+            border: 0;
+            border-radius: 25px;
+            background-color: $buttonColor;
+            color: white;
+            font-family: "Raleway", sans-serif;
+            font-size: .8em;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            transition: all .2s ease-in-out;
+        }
+        
+            &:hover {
+                transform: scale(1.1);
+            }
+    }
+}
+
+
+    

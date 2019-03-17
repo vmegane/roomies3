@@ -1,0 +1,117 @@
+.navigation {
+        height: auto;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 155px;        
+        background-color:$footerColor;
+        div {
+            justify-content: center;
+        }
+}
+.navigation-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 800px;
+    padding: 5px;
+    ul {
+        display: flex;
+        flex-direction: row;
+        li {
+            padding: 10px 30px;
+            a {
+                color: white;
+                letter-spacing: .5px;
+            }
+        }
+    }
+    @media screen and (max-width: 720px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+}
+@media screen and (max-width: 720px) {
+    .navigation {
+        height: auto;
+        position: fixed;
+        width: 100%;
+        left: -100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 70px;
+        background-color: $footerColor;
+        div {
+            justify-content: center;
+        }
+    }
+    .hideMenu {
+        transform: translate3d(-100vw, 0, 0);
+    }
+    
+    .showMenu {
+        left: 0;
+        transform: translate3d(0vw, 0, 0);
+        overflow: hidden;
+        transition: transform .3s cubic-bezier(0, .52, 0, 1);
+        ul {
+            display: flex;
+            flex-direction: column;
+            // align-items: center;
+            text-decoration: none; 
+            color: white;
+            margin: 20px auto 0 auto;
+            padding-bottom: 20px;
+            li a {
+                color: white;
+                text-decoration: none;
+                line-height: 1.5em;
+            }
+        }
+    }
+
+}
+
+
+
+.burger-menu-icon {
+    width: 60px;
+    height: 51px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    //background-image: url('../images/roomies burger-04-05.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 6px auto 0 auto;
+    @media screen and (min-width: 720px) {
+        display: none;
+        }
+    // -webkit-box-shadow: 7px 6px 32px 19px rgba(255, 255, 255, 0.75);
+    // -moz-box-shadow: 7px 6px 32px 19px rgba(255, 255, 255,0.75);
+    // box-shadow: 7px 6px 32px 19px rgba(255, 255, 255,0.75);
+    @keyframes bounce {
+        0% {
+          left: 5px;
+        }
+        50% {
+          left: 10px;
+        }
+        100% {
+          left: 0px;
+        }
+      }
+      
+    &:hover {
+        cursor: pointer;
+        animation: bounce 1s 1 ease; 
+    }
+}
