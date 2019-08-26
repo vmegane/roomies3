@@ -1,19 +1,49 @@
-.messages-content-wrapper {
-//     @media screen and (min-width: 720px) {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: flex-start;
-//         align-items: center;
-//    }
-    padding: 14px;
-    width: 100%;
-    height: auto;
-    .add-message-wrapper {
+.home-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //border: 1px solid black;
+    width: 80%;
+    .roommates-list {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        
+        li {
+            margin: 5px 10px;
+            font-size: .9em;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
+    
+        }
     }
+    h1 {
+        margin: 10px 0 10px 0;
+        .material-icons {
+            font-size: 20px;
+        }
+    }
+}
+
+
+.add-message-wrapper {
+    display: flex;
+    margin-bottom: 20px;
+    width: 80%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-message-form {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
 
 .add-message-button {
     padding: 15px 0 15px 0;
@@ -21,16 +51,24 @@
 
 .post-button {
     display: block;
-    margin: 17px auto 17px auto;
-    width: 70px;
+    margin: 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 0 15px 15px 0;
+
+    &:hover {
+        transform: none;
+    }
+
 }
 
 .add-message-area {
-    height: 100px;
+    height: 37px;
     width: 100%;
     resize: none;
-    border-radius: 5px;
+    border-radius: 15px 0 0 15px;
     border: 1px solid lightslategrey;
+    padding: 8px;
 }
 
 
@@ -41,6 +79,7 @@
 .message-timestamp {
     font-size: 0.6em;
 }
+
 .message-list {
     padding: 15px;
     display: flex;
@@ -48,52 +87,119 @@
     justify-content: center;
     width: 100%;
 }
-.message-wrapper {
-    li {
-        width: 100%;
+
+.messages-list {
+    width: 70%;
+}
+
+li {
+    margin-bottom: 20px;
+    //margin-left: 30px;
+    //margin-right: 20px;
+    position: relative;
+    @mixin message-avatar($left, $right, $color) {
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background-color: $color;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        bottom: 10px;
+        left: $left;
+        right: $right;
+
     }
-    width: 90%;
-    margin: 0 0 15px 0;      
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #c7ecf1;
-    padding: 13px 15px 13px 15px;
-    border-radius: 0 15px 15px 15px;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(129, 129, 129,1);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(129, 129, 129,1);
-    box-shadow: 1px 1px 2px 0px rgba(129, 129, 129, 1);
-    .message-text {
-        margin: 15px 0 15px 0;
-    
+.message-avatar {
+    &.left {
+        @include message-avatar(-20px, 0, darken($secondButtonColor, 5%)) 
+    }
+    &.right {
+        @include message-avatar(unset, -20px, $secondButtonColor) 
+    }   
+}
+    .message-wrapper {
+        padding: 10px 25px;
+        border-radius: 16px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
         p {
             color: $textColor;
             margin: 3px 0 3px 0;
-            line-height: 18px;
+            font-size: .9em;
+            line-height: 1.5em;
+            text-align: left;
+            width: 100%;
+            
         }
-    }
-    // .user-avatar {
-    //     width: 41px;
-    //     height: 50px;
-    //     background-size: contain;
-    //     background-image: url('../images/user-face.png')
-    // }
-    .message-author {
-        color: $buttonColor;
-        font-size: 1em;
-        padding-bottom: 5px;
-    }
-    
-    .message-timestamp {
-        font-size: 0.6em;
-        padding-top: 15px;
-    }
-}
+        // &.left {
+        //     //background-color: $bgColor;
+        //     border-radius: 0 8px 8px 8px;
+
+        // }
+        // &.right {
+        //     //background-color: $bgColor;
+        //     border-radius: 8px 0 8px 8px;
+
+        // }
 
 
-.add-message-form {
-    display: block;
-    width: 70%;
-}
+        .message-inner-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 5px;
+           
+                // .avatar-and-author {
+
+                    
+                //     display: flex;
+                //     flex-direction: row;
+                //     align-items: baseline;
+                //     padding: 2px;
+                //     background-color: transparent;
+                //     &.right {
+                //         justify-content: flex-end;
+                //         .message-avatar {
+                //             @include message-avatar(1, 10px, 0);
+                //         }
+                        
+                //     }
+                //     &.left {
+                //         justify-content: flex-start;
+                //         .message-avatar {
+                //             @include message-avatar(0, 0, 10px);
+                //         }
+                //     }
+                //     .message-author {
+                //         color: $buttonColor;
+                //         font-size: 0.8em;
+                //         padding-bottom: 5px;
+                //         margin-bottom: 5px;
+                //     }
+            
+
+            //     width: 100%;
+            //     border-radius: 5px;
+            //     margin: 2px;
+            //     padding: 3px;
+
+                
+            // }
+
+        }
+
+        .message-timestamp {
+            font-size: 0.6em;
+            padding-top: 15px;
+        }
+
+
+    }
 
 }

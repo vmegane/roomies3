@@ -1,5 +1,5 @@
 $mainFont: 'Raleway', sans-serif;
-
+$headlineFont: 'Raleway-bold', sans-serif;
 
 body {
     display: block;
@@ -25,7 +25,7 @@ body {
 .logo-main-page {
     width: 60px;
     height: 60px;
-    //background-image: url('../images/roomies burger-04-05.png');
+    background-image: url('./images/roomies burger-04-05.png');
     background-size: contain;
     background-repeat: no-repeat;
     font-family: $mainFont;
@@ -41,51 +41,33 @@ body {
     align-self: flex-end;
 }
 .main-wrapper {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    &.background-image {
-        background-image: url('../images/home.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        height: 100vh;
-    }
 }
 
 .content-wrapper {
-    height: 100%;
     width: 80%;
+    overflow: hidden;
      @media screen and (max-width: 600px) {
         width: 100%;
     }
     @media screen and (min-width: 720px) {
-        margin-top: 200px;
+        margin-top: 10px;
     }
-
-    background-color: $containerBgColor;
     max-width: 720px;
     margin-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
-    box-shadow: 1px 1px 2px 0px rgba(115, 115, 115, 1);
 
 }
 
-
-
 h2 {
-    font-family: $mainFont;
-    color: $textColor;
+    font-family: $headlineFont;
+    color: $headlineColor;
     margin: 20px auto;
     width: 220px;
     text-align: center;
@@ -117,14 +99,18 @@ padding: 15px 0 15px 0;
 margin: 17px 0 17px 0;
 background-color: $buttonColor;
 color: white;
-font-family: "Raleway", sans-serif;
-font-size: 0.8em;
-text-transform: uppercase; 
+font-family: $headlineFont;
+font-weight: 500;
+font-size: 1em;
+//text-transform: uppercase; 
 transition: all .2s ease-in-out;
-border-radius: 25px;
-border: 1px solid lightslategrey;
+border-radius: 7px;
+border: 0px solid lightslategrey;
 transition: all .2s ease-in-out;
-&:hover {
-    transform: scale(1.1);
+
 }
+
+.material-icons {
+    color: $secondButtonColor;
+    font-size: 40px;
 }

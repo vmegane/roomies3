@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Messages extends React.Component {
+class Header extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <div>
-                <h2>Messages :)</h2>
+            <div className="main-header">
             </div>
         )
     }
 }
 
-export default Messages;
+export default Header;

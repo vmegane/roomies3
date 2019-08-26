@@ -1,0 +1,23 @@
+.notification-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    li {
+        width: 100%;
+        margin: 5px 10px;
+        font-size: .9em;
+        padding: 8px;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.1);
+        .notification-timestamp {
+            font-size: 0.6em;
+            padding-top: 15px;
+        }
+
+    }
+}
+
+        

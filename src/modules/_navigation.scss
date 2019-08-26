@@ -1,13 +1,17 @@
 .navigation {
         height: auto;
-        position: fixed;
-        width: 100%;
+        position: relative;
+        width: 100vw;
         left: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        top: 155px;        
-        background-color:$footerColor;
+        background-color:$headlineColor;
+        height: 45px;
+        justify-content: center;
+        border-bottom: 1px solid black;
+        box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.33);
+
         div {
             justify-content: center;
         }
@@ -17,41 +21,100 @@
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    width: 80%;
     max-width: 800px;
     padding: 5px;
+    .user-info {
+        display: none;
+        .email {
+            color: $containerBgColor;
+        }
+    }
     ul {
         display: flex;
         flex-direction: row;
+        align-items: center;
         li {
-            padding: 10px 30px;
+            margin: 5px 25px;
+
             a {
                 color: white;
                 letter-spacing: .5px;
+                font-family: $headlineFont;
+                .avatar{
+                    width: 30px;
+                    min-width: 30px;
+                    height: 30px;
+                    border-radius: 100%;
+                    font-size: 1em;
+                    background-color: $secondButtonColor;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 3px;
+                    color: white;
+                }
             }
+             
         }
     }
     @media screen and (max-width: 720px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    }
+    height: 100%;
+    width: 100%;
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        background-color: $footerColor;
+        height: 45vh;
+        //background-image: url('./images/home-mobile.png');
+        background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    align-items: flex-end;
 
+        .email {
+            color: $textColor;
+            font-size: .9em;
+            height: 1.2em;
+            width: 100%;
+            text-align: right;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+            font-family: $headlineFont;
+            padding-right: 4px;
+        }
+        .welcome {
+            font-size: 1.5em;
+            color: white;
+            padding: 0 5px 5px 0;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+        }
+    }
+    }
 }
 @media screen and (max-width: 720px) {
     .navigation {
-        height: auto;
+        height: 100vh;
         position: fixed;
-        width: 100%;
+        width: 80%;
         left: -100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        top: 70px;
+        top: 0px;
+        z-index: 100;
         background-color: $footerColor;
+        //border-right: 3px solid $borderColor;
+        box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.33);
+
         div {
             justify-content: center;
         }
+        
     }
     .hideMenu {
         transform: translate3d(-100vw, 0, 0);
@@ -83,22 +146,20 @@
 
 
 .burger-menu-icon {
-    width: 60px;
-    height: 51px;
+    width: 50px;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 0;
-    //background-image: url('../images/roomies burger-04-05.png');
+    background-image: url('./images/icons8-top-menu-60.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 6px auto 0 auto;
+    z-index: 1000;
     @media screen and (min-width: 720px) {
         display: none;
         }
-    // -webkit-box-shadow: 7px 6px 32px 19px rgba(255, 255, 255, 0.75);
-    // -moz-box-shadow: 7px 6px 32px 19px rgba(255, 255, 255,0.75);
-    // box-shadow: 7px 6px 32px 19px rgba(255, 255, 255,0.75);
-    @keyframes bounce {
+     @keyframes bounce {
         0% {
           left: 5px;
         }

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
-import * as firebase from 'firebase';
+import { connect } from 'react-redux';
+import { signIn } from '../../store/actions/authActions'
+import { Redirect } from 'react-router-dom';
+
 
 class LoginWrapper extends React.Component {
 
@@ -11,7 +14,6 @@ class LoginWrapper extends React.Component {
             email: '@',
             password: ''
         }
-        console.log('login wrapper', this.props)
     }
     fillEmail = (event) => {
         this.setState({
@@ -26,28 +28,21 @@ class LoginWrapper extends React.Component {
 
     login = (event) => {
         event.preventDefault();
-        console.log('event')
-        const email = this.state.email;
-        const password = this.state.password;
-        console.log('state', this.state)
-
-        const promise = firebase.auth().signInWithEmailAndPassword(email, password)
-        promise
-            .then((resp) => {
-                console.log('resp',resp)
-                this.props.manageLogin(true);
-            })
-            .catch(error => console.log(error.message))
+        this.props.signIn(this.state)
     }
 
 
     render() {
+        const { authError, auth } = this.props
+         if (auth.uid) return <Redirect exact to='/'/>
+
         return (
             <div className="login-form-wrapper">
                <form className="form">
                     <input type="email" placeholder="type your email" value={this.props.email} onChange={this.fillEmail} />
                     <input type="password" placeholder="type your password" value={this.props.password} onChange={this.fillPassword} />
                     <input type="submit"   className="input-submit-login" value="login" onClick={this.login} />
+                    <span> { authError ? authError : null }</span>
                 </form>
 
             </div>
@@ -55,4 +50,16 @@ class LoginWrapper extends React.Component {
     }
 }
 
-export default LoginWrapper;
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth,
+        authError: state.auth.authError
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signIn: (credentials) => (dispatch(signIn(credentials)))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginWrapper);

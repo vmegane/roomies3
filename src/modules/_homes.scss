@@ -1,183 +1,181 @@
-.homes-content-wrapper {
-    @media screen and (min-width: 720px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+.button-join-home {
+    @media screen and (max-width: 350px) {
+        height: 30px;
+        width: 150px;
+        padding: 0px;
     }
-    padding: 14px;
+
+    padding: 5px;
+    background-color: $secondButtonColor;
+    color: white;
+    //font-family: "Raleway", sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all .2s ease-in-out;
+    height: 32px;
     width: 100%;
-    height: auto;
+    border-radius: 0 0 3px 3px;
+    border: 2px solid $secondButtonColor;
 
+    @media screen and (max-width: 720px) {
+        height: 100%;
+        width: 50px;
+        border-radius: 0 3px 3px 0;
+    }
+}
 
-    .button-join-home {
-         @media screen and (max-width: 350px) {
-            height: 30px;
-            width: 150px;
-            padding: 0px;
-        }
-        padding: 10px;
-        background-color: $secondButtonColor;
+p {
+    text-align: center;
+}
+h1 {
+    margin: 20px 0 20px 0;
+}
+
+.create-home-form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 80%;
+
+    .create-home-button {
+        // padding: 10px;
+        margin: 17px 0 17px 0;
+        background-color: $buttonColor;
         color: white;
         font-family: "Raleway", sans-serif;
         font-size: 1em;
         transition: all .2s ease-in-out;
-        height: 50px;
-        width: 50px;
-        border-radius: 25px;
-        border: 0;
+        border-radius: 3px;
+        border: 1px solid lightslategrey;
     }
 
+    input {
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 15px;
+        border-radius: 3px;
+        border: 1px solid lightslategrey;
+        background-color: white;
+        font-family: 'Raleway', sans-serif;
+        color: $textColor;
 
-    h1 {
-        margin: 20px 0 20px 0;
-    }
-}
-
-.create-home-wrapper {
-    // display: flex;
-    // flex-direction: column;
-    // align-content: center;
-    // align-items: center;
-    padding: 10px;
-    p {
-        text-align: center;
-    }
-    .create-home-form {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        align-items: center;
-        width: 80%;
-        .create-home-button {
-            // padding: 10px;
-            margin: 17px 0 17px 0;
-            background-color: $buttonColor;
-            color: white;
-            font-family: "Raleway", sans-serif;
-            font-size: 1em;
-            transition: all .2s ease-in-out;
-            border-radius: 5px;
-            border: 1px solid lightslategrey;
-        }
-        input {
-            padding: 10px 10px 10px 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid lightslategrey;
-            background-color: white;
-            font-family: 'Raleway', sans-serif;
+        &::placeholder {
             color: $textColor;
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        &:focus {
+            font-size: 18px;
+            border: 1px solid $textColor;
+
             &::placeholder {
                 color: $textColor;
                 text-align: center;
                 font-family: 'Raleway', sans-serif;
-            }
-            &:focus {
-                font-size: 18px;
-                border: 1px solid $textColor;
-                &::placeholder {
-                    color: $textColor;
-                    text-align: center;
-                    font-family: 'Raleway', sans-serif;
-                    
-                }
+
             }
         }
     }
 }
+
 .homes-list {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+        @media screen and (min-width: 720px) {
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width: 720px) {
         li {
-        margin: 5px;
+            margin: 10px;
+            width: 85%;
+        }
     }
+    }
+
+
+
     @media screen and (min-width: 720px) {
         li {
-            width: 46%;
+            width: 31%;
             //overflow: hidden;
-            margin: 5px;
+            margin: 7px;
+            max-width: 250px;
+            min-width: 150px;
         }
-        width: 95%;
         display: flex;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
-        justify-content: space-around;   }
-    
-        .single-home-wrapper {
-        margin: 0;        
+        justify-content: space-around;
+    }
+
+    .single-home-wrapper {
+        margin: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        background-color: #c7ecf1;
-        padding: 13px 15px 13px 15px;
-        border-radius: 5px;
-        -webkit-box-shadow: 2px 2px 5px 0px rgba(129, 129, 129,1);
-        -moz-box-shadow: 2px 2px 5px 0px rgba(129, 129, 129,1);
-        box-shadow: 1px 1px 2px 0px rgba(129, 129, 129, 1);
-        //min-width: 300px;
-        // @media screen and (max-width: 350px) {
-        //     align-items: center;
-        //     flex-wrap: wrap;
-        //     justify-content: center;
-        // }
+        border: 0px solid $headerColor;
+        background-color: white;
+        padding: 0 0 0 8px;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
+
         @media screen and (min-width: 720px) {
-           
-            // align-items: center;
-            // flex-wrap: wrap;
-            // justify-content: center;
-            width: 94%;            
             justify-content: center;
-            -webkit-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
-            -moz-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
-            box-shadow: 1px 1px 2px 0px rgba(115, 115, 115, 1);
+            padding: 8px 0 0 0;
 
-            //min-width: 200px;
+
         }
 
-}
+    }
 
-
-    // @media screen and (max-width: 720px) {
-       
-    // }
-    .single-home-wrapper-inner {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;       
-        align-items: center;
-        width: auto;
-        margin: 0 10px 0 0;
-        @media screen and (min-width: 720px) {
-            width: 100%;
-        }
-        span.home-name {
+    .home-name {
         margin: 5px;
         padding: 3px 0 3px 0;
         text-transform: capitalize;
-        font-weight: bold;
+        font-weight: 500;
         font-size: 1.3em;
         text-align: center;
         letter-spacing: 1px;
-         a {
-             &:hover {
-                 color: $buttonColor;
-             }
-         }
+        margin: 15px 0 15px 0;
+        font-family: $headlineFont;
+        color: rgb(88, 88, 88);
+    }
+
+    .single-home-wrapper-inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: no-wrap;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        margin: 0;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        @media screen and (min-width: 720px) {
+            width: 100%;
         }
 
-        span.roommates-number {
-            align-self: center;
+
+
+        a {
+            &:hover {
+                color: $buttonColor;
+            }
         }
     }
 
-    span {
-        margin-left: 10px;
-    }
 }
