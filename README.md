@@ -1,3 +1,38 @@
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Authors](#authors)
+
+## General info
+This project is version 01 of roomies - an app for apartment sharing. It was created as a final project for Coderslab.pl front-end bootcamp. Still in development. 
+	
+## Technologies
+Project is created with:
+* HTML5
+* CSS3/SASS
+* ES6
+* React
+* Redux with Thunk 
+* Firebase backend
+* Firestore
+* Cloud Functions
+
+## Features:
+* Login
+* Sign-up
+* Create a home
+* Join a home
+* Browse homes
+* Leave a message to other people who signed up and joined the same home
+* Notifications
+
+## Authors
+* Paulina Opacka (vmegane)
+* Justyna Zinkiewicz-Grochot (juzekz)
+
+
+## Setup 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
